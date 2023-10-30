@@ -1,27 +1,35 @@
-// use std::io;
-use std::fmt;
+use rand::Rng;
+use std::io;
+// use std::cmp::Ordering;
 
-struct Point {
-    x: i32,
-    y: i32,
-}
-
-impl fmt::Debug for Point {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "Point {{ x: {}, y: {} }}", self.x, self.y)
-    }
-}
+type t = (i32, f64);
 
 fn main() {
-    //     let name = "Alice";
-    //     let age = 30;
-    //     let greeting = format!("Hello, my name is {name} and I am {age} years old."); //format! 可讓變數與字串拼接
-    //     println!("{}", greeting); //println! 輸出到命令列,且帶換行格式
-    //     print!("{}", greeting); //print! 輸出到命令列
-    //     eprintln!("{greeting}"); //輸出到錯誤列,且帶換行格式
-    //     eprint!("{greeting}"); //輸出到錯誤列
+    // ---------2023/10/28------------
+    // --snip--
+    //     let mut rng_number = rand::thread_rng().gen_range(1..=100);
+    //     let mut guess = String::new();
 
-    //================================================================
-    let p = Point { x: 3, y: 5 };
-    println!("Debug format: {:?}", p);
+    //     println!("輸入數字");
+    //     io::stdin().read_line(&mut guess);
+    //     println!("You guessed: {guess}");
+    //     let guess: i32 = {
+    //         eprintln!("Guess variable contents: {:?}", guess);
+    //         guess.parse().expect("msg is not")
+    //     };
+    //     println!("You guessed:{} ", guess);
+    //     // match guess.cmp(&rng_number) {
+    //     //     Ordering::Less => println!("Too small!"),
+    //     //     Ordering::Greater => println!("Too big!"),
+    //     //     Ordering::Equal => println!("You win!"),
+    //     // }
+    // --------------------------------
+    let tup: t = (500, 6.14);
+    let (x, y) = tup;
+    let a = tup.0;
+    print!("輸出Y: {y}");
+    print!("輸出X: {a}");
+    let d: [i32; 5] = [3; 5]; //array [ type : length]
+    let number = 13;
+    let f = if number < 0 { 1 } else { 2 };
 }
